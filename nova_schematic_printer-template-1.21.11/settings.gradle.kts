@@ -1,17 +1,22 @@
-pluginManagement {
-	repositories {
-		maven {
-			name = "Fabric"
-			url = uri("https://maven.fabricmc.net/")
-		}
-		mavenCentral()
-		gradlePluginPortal()
-	}
 
-	plugins {
-		id("net.fabricmc.fabric-loom-remap") version providers.gradleProperty("loom_version")
-	}
+pluginManagement {
+    repositories {
+        maven {
+            url = 'https://maven.fabricmc.net/'
+        }
+        gradlePluginPortal()
+        mavenCentral()
+    }
 }
 
-// Should match your modid
-rootProject.name = "nova_schematic_printer"
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven {
+            url = 'https://maven.fabricmc.net/'
+        }
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'NovaSchematicPrinter'
