@@ -1,0 +1,51 @@
+{
+	"schemaVersion": 1,
+	"id": "nova_schematic_printer",
+	"version": "${version}",
+	"name": "nova_schematic_printer",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/nova_schematic_printer/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "nova_schematic_printer.Nova_schematic_printer",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "nova_schematic_printer.client.Nova_schematic_printerClient",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "nova_schematic_printer.client.Nova_schematic_printerDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"nova_schematic_printer.mixins.json",
+		{
+			"config": "nova_schematic_printer.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	}
+}
